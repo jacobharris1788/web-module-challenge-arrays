@@ -171,10 +171,21 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
+function getAverageWordLength(array) {
+    let wordCount = [];
+    let total = 0;
 
-    /*code here*/
+    // Get new array of word count only
+    for (i = 0; i < array.length; i++) {
+        wordCount[i] = array[i].split(" ").length;
+    }
 
+    // Get new array of total of words
+    for (i = 0; i < wordCount.length; i++) {
+        total += wordCount[i];
+    }
+
+    return Math.round(total / wordCount.length);
 }
 
 
